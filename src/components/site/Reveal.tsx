@@ -4,7 +4,7 @@ type Props = {
   children: ReactNode;
   delay?: number;
   y?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
   className?: string;
   once?: boolean;
 };
