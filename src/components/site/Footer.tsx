@@ -1,3 +1,24 @@
+import { Link } from "@tanstack/react-router";
+
+const cols = [
+  {
+    title: "Product",
+    items: [
+      { label: "How It Works", to: "/" as const, hash: "how" },
+      { label: "Features", to: "/" as const, hash: "features" },
+      { label: "For Companies", to: "/companies" as const },
+      { label: "Insights", to: "/insights" as const },
+    ],
+  },
+  {
+    title: "Company",
+    items: [
+      { label: "About", to: "/about" as const },
+      { label: "Contact", to: "/contact" as const },
+    ],
+  },
+] as const;
+
 export function Footer() {
   return (
     <footer className="border-t border-border/60 bg-background">
@@ -5,37 +26,45 @@ export function Footer() {
         <div>
           <div className="display text-2xl">PackyTrace</div>
           <p className="mt-3 text-sm text-muted-foreground max-w-xs">
-            The digital layer behind food packaging. Built by Ready2Trace, an Italian software company.
+            The digital layer behind food packaging. Built by Ready2Trace, an
+            Italian software company.
           </p>
         </div>
-        <FooterCol
-          title="Product"
-          items={["How It Works", "Features", "For Companies", "Insights"]}
-        />
-        <FooterCol title="Company" items={["About", "Mission", "Team", "Contact"]} />
-        <FooterCol title="Legal" items={["Privacy", "Terms", "GDPR", "Cookies"]} />
+        {cols.map((c) => (
+          <div key={c.title}>
+            <div className="eyebrow text-foreground/70 mb-4">{c.title}</div>
+            <ul className="space-y-2 text-sm">
+              {c.items.map((i) => (
+                <li key={i.label}>
+                  <Link
+                    to={i.to}
+                    hash={"hash" in i ? i.hash : undefined}
+                    className="text-muted-foreground hover:text-foreground transition-colors link-underline"
+                  >
+                    {i.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        <div>
+          <div className="eyebrow text-foreground/70 mb-4">Legal</div>
+          <ul className="space-y-2 text-sm">
+            {["Privacy", "Terms", "GDPR", "Cookies"].map((l) => (
+              <li key={l}>
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors link-underline">
+                  {l}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
       <div className="container-x py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground border-t border-border/60">
         <span>© {new Date().getFullYear()} Ready2Trace S.r.l. — Milano, Italia</span>
         <span>Building the next layer of food packaging.</span>
       </div>
     </footer>
-  );
-}
-
-function FooterCol({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div>
-      <div className="eyebrow text-foreground/70 mb-4">{title}</div>
-      <ul className="space-y-2 text-sm">
-        {items.map((i) => (
-          <li key={i}>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              {i}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
