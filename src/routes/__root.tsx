@@ -72,14 +72,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "PackyTrace — The digital layer behind food packaging" },
+      {
+        name: "description",
+        content:
+          "PackyTrace by Ready2Trace turns food packaging QR codes into useful digital experiences for consumers and actionable insights for brands.",
+      },
+      { name: "author", content: "Ready2Trace" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:site_name", content: "PackyTrace" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
