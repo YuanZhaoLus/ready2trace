@@ -169,7 +169,7 @@
   }
 
   .btn-primary {
-    @apply group inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-all duration-300;
+    @apply inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-all duration-300;
     position: relative;
     overflow: hidden;
   }
