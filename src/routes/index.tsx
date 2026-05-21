@@ -6,13 +6,7 @@ import heroScan from "@/assets/hero-scan.jpg";
 import groceries from "@/assets/groceries.jpg";
 import {
   ArrowUpRight,
-  BookOpen,
-  Recycle,
-  Gift,
   Sparkles,
-  MapPin,
-  ScanLine,
-  ChartBarBig,
   ShieldCheck,
   Leaf,
 } from "lucide-react";
