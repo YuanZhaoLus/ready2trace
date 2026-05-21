@@ -46,8 +46,6 @@ function Home() {
       <Hero />
       <Marquee />
       <Intro />
-      <HowItWorks />
-      <Features />
       <SplitAudience />
       <WhyUs />
       <ExploreMore />
@@ -96,9 +94,9 @@ function Hero() {
               Partner With Us
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
-            <a href="#how" className="btn-ghost">
+            <Link to="/how-it-works" className="btn-ghost">
               See How It Works
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -440,6 +438,7 @@ function WhyUs() {
 /* ---------------- EXPLORE MORE ---------------- */
 function ExploreMore() {
   const links = [
+    { to: "/how-it-works", t: "How It Works", d: "The 15-second flow and full feature system." },
     { to: "/companies", t: "For Companies", d: "Branded channel, behavioural insight, retention." },
     { to: "/about", t: "About", d: "Six students. One question. A startup in the making." },
     { to: "/insights", t: "Insights", d: "Field notes from food, packaging and product." },
