@@ -82,6 +82,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "PackyTrace" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "PackyTrace — The digital layer behind food packaging" },
+      { name: "twitter:title", content: "PackyTrace — The digital layer behind food packaging" },
+      { name: "description", content: "PackyTrace is a website introducing a product and company for innovative problem-solving." },
+      { property: "og:description", content: "PackyTrace is a website introducing a product and company for innovative problem-solving." },
+      { name: "twitter:description", content: "PackyTrace is a website introducing a product and company for innovative problem-solving." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/17cc80ae-4864-4bca-a619-b32b60c33474/id-preview-818fedf6--325dbe49-0ab0-4c03-b2a5-381085ff86a6.lovable.app-1779397643175.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/17cc80ae-4864-4bca-a619-b32b60c33474/id-preview-818fedf6--325dbe49-0ab0-4c03-b2a5-381085ff86a6.lovable.app-1779397643175.png" },
     ],
     links: [
       {
