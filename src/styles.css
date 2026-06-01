@@ -6,24 +6,24 @@
 
 @layer base {
   @font-face {
-    font-family: "Space Grotesk";
+    font-family: "Montserrat";
     font-style: normal;
-    font-weight: 300 700;
+    font-weight: 300 800;
     font-display: swap;
-    src: url("https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUUxjLA.woff2") format("woff2");
+    src: url("https://fonts.gstatic.com/s/montserrat/v30/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXp-p7K4KLg.woff2") format("woff2");
   }
   @font-face {
-    font-family: "Inter";
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 300 700;
     font-display: swap;
-    src: url("https://fonts.gstatic.com/s/inter/v19/UcCO3FwrK3iLTeHuS_nVMrMxCp50ojIw2boKoduKmMEVuLyfMZg.woff2") format("woff2");
+    src: url("https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.woff2") format("woff2");
   }
 }
 
 @theme inline {
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", Helvetica, "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Open Sans", Helvetica, "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -59,47 +59,47 @@
 }
 
 :root {
-  --radius: 0.25rem;
+  --radius: 0.875rem;
 
-  /* Warm cream off-white, deep navy ink, ember orange accent, forest green */
-  --background: oklch(0.962 0.012 85);
-  --foreground: oklch(0.18 0.04 250);
-  --ink: oklch(0.18 0.04 250);
+  /* Mood board palette: airy lavender-white background, deep royal blue ink + accent, soft periwinkle surfaces, white cards */
+  --background: oklch(0.985 0.012 270);
+  --foreground: oklch(0.20 0.08 268);
+  --ink: oklch(0.20 0.08 268);
 
-  --card: oklch(0.985 0.005 85);
+  --card: oklch(1 0 0);
   --card-foreground: var(--foreground);
   --popover: oklch(1 0 0);
   --popover-foreground: var(--foreground);
 
-  --primary: oklch(0.18 0.04 250); /* deep navy ink for primary buttons */
-  --primary-foreground: oklch(0.962 0.012 85);
+  --primary: oklch(0.42 0.21 268); /* royal blue */
+  --primary-foreground: oklch(0.99 0.005 270);
 
-  --secondary: oklch(0.92 0.015 85);
+  --secondary: oklch(0.94 0.025 270);
   --secondary-foreground: var(--foreground);
 
-  --muted: oklch(0.92 0.015 85);
-  --muted-foreground: oklch(0.45 0.025 250);
+  --muted: oklch(0.94 0.025 270);
+  --muted-foreground: oklch(0.50 0.06 268);
 
-  --accent: oklch(0.62 0.16 45); /* ember orange */
-  --accent-foreground: oklch(0.985 0.005 85);
+  --accent: oklch(0.42 0.21 268);
+  --accent-foreground: oklch(0.99 0.005 270);
 
-  --forest: oklch(0.32 0.06 155); /* deep forest green */
-  --leaf: oklch(0.62 0.14 145); /* fresh green */
-  --ember: oklch(0.62 0.16 45); /* ember/terracotta */
-  --sand: oklch(0.88 0.02 80);
+  --forest: oklch(0.32 0.14 268);
+  --leaf: oklch(0.62 0.18 268);
+  --ember: oklch(0.42 0.21 268); /* royal blue accent (was ember orange) */
+  --sand: oklch(0.955 0.02 270); /* very light periwinkle surface */
 
   --destructive: oklch(0.55 0.22 27);
-  --destructive-foreground: oklch(0.985 0.005 85);
+  --destructive-foreground: oklch(0.985 0.005 270);
 
-  --border: oklch(0.85 0.015 85);
-  --input: oklch(0.85 0.015 85);
-  --ring: oklch(0.45 0.025 250);
+  --border: oklch(0.90 0.025 270);
+  --input: oklch(0.90 0.025 270);
+  --ring: oklch(0.42 0.21 268);
 
-  --chart-1: var(--forest);
+  --chart-1: var(--ember);
   --chart-2: var(--leaf);
-  --chart-3: var(--ember);
-  --chart-4: oklch(0.75 0.13 85);
-  --chart-5: oklch(0.55 0.10 230);
+  --chart-3: oklch(0.78 0.10 270);
+  --chart-4: oklch(0.65 0.18 250);
+  --chart-5: oklch(0.50 0.20 280);
 }
 
 @layer base {
@@ -114,25 +114,29 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "ss01", "cv11";
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.022em;
     font-weight: 600;
   }
   .display {
     font-family: var(--font-display);
-    letter-spacing: -0.04em;
-    font-weight: 600;
-    line-height: 0.95;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+    line-height: 0.98;
   }
   .eyebrow {
     font-family: var(--font-sans);
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
+  }
+  ::selection {
+    background: oklch(0.42 0.21 268 / 0.25);
   }
 }
 
@@ -169,7 +173,7 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-all duration-300;
+    @apply inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all duration-300;
     position: relative;
     overflow: hidden;
   }
@@ -177,17 +181,30 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, transparent, oklch(1 0 0 / 0.18), transparent);
+    background: linear-gradient(120deg, transparent, oklch(1 0 0 / 0.22), transparent);
     transform: translateX(-100%);
     transition: transform 700ms ease;
   }
   .btn-primary:hover::before { transform: translateX(100%); }
-  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 30px -12px oklch(0.18 0.04 250 / 0.35); }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 36px -14px oklch(0.42 0.21 268 / 0.55);
+  }
 
   .btn-ghost {
-    @apply inline-flex items-center gap-2 rounded-sm border border-foreground/15 px-6 py-3.5 text-sm font-medium text-foreground transition-all duration-300;
+    @apply inline-flex items-center gap-2 rounded-full border border-foreground/15 px-6 py-3 text-sm font-medium text-foreground transition-all duration-300 bg-background/60 backdrop-blur;
   }
-  .btn-ghost:hover { border-color: oklch(0.18 0.04 250 / 0.5); transform: translateY(-1px); }
+  .btn-ghost:hover {
+    border-color: oklch(0.42 0.21 268 / 0.6);
+    color: oklch(0.42 0.21 268);
+    transform: translateY(-1px);
+  }
+
+  .glass {
+    background: oklch(1 0 0 / 0.6);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+  }
 }
 
 @keyframes fadeUp {
@@ -208,7 +225,7 @@
 }
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-8px); }
 }
 @keyframes shimmer {
   0% { background-position: -200% 0; }
@@ -217,6 +234,14 @@
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.2; }
+}
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(20px, -16px, 0) scale(1.05); }
+}
+@keyframes gradient-pan {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
