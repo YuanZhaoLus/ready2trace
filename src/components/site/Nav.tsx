@@ -32,7 +32,7 @@ export function Nav() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
         scrolled || open
-          ? "backdrop-blur-md bg-background/85 border-b border-border/60"
+          ? "glass border-b border-border/60 shadow-[0_1px_0_0_rgba(255,255,255,0.6)_inset]"
           : "bg-transparent border-b border-transparent"
       }`}
     >
