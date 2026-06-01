@@ -51,12 +51,31 @@ function Home() {
 function Hero() {
   return (
     <section className="relative pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden">
+      {/* Ambient gradient blobs — Apple-style atmosphere */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div
+          className="absolute -top-32 -left-24 h-[42rem] w-[42rem] rounded-full opacity-60 blur-3xl"
+          style={{
+            background:
+              "radial-gradient(closest-side, oklch(0.78 0.13 268 / 0.55), transparent 70%)",
+            animation: "drift 14s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute top-20 -right-32 h-[36rem] w-[36rem] rounded-full opacity-50 blur-3xl"
+          style={{
+            background:
+              "radial-gradient(closest-side, oklch(0.85 0.08 290 / 0.6), transparent 70%)",
+            animation: "drift 18s ease-in-out -4s infinite",
+          }}
+        />
+      </div>
       <div className="container-x">
         <div
           className="eyebrow text-ember mb-8 flex items-center gap-2"
           style={{ animation: "fadeUp 700ms ease-out both" }}
         >
-          <span className="inline-block h-1 w-1 rounded-full bg-ember" style={{ animation: "blink 1.6s ease-in-out infinite" }} />
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-ember" style={{ animation: "blink 1.6s ease-in-out infinite" }} />
           Ready2Trace · PackyTrace
         </div>
         <h1 className="display text-[12vw] md:text-[8.5vw] lg:text-[7.5rem] text-foreground max-w-[14ch]">
@@ -65,8 +84,13 @@ function Hero() {
           </span>
           <br />
           <span
-            className="inline-block text-foreground/40"
-            style={{ animation: "fadeUp 900ms 280ms ease-out both" }}
+            className="inline-block bg-clip-text text-transparent"
+            style={{
+              animation: "fadeUp 900ms 280ms ease-out both, gradient-pan 8s linear infinite",
+              backgroundImage:
+                "linear-gradient(90deg, oklch(0.42 0.21 268), oklch(0.62 0.20 280), oklch(0.42 0.21 268))",
+              backgroundSize: "200% 100%",
+            }}
           >
             in 15 seconds.
           </span>
