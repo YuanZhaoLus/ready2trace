@@ -83,23 +83,42 @@ function AboutPage() {
       </Section>
 
       <Section eyebrow="The team">
-        <Reveal as="h2" className="display text-4xl md:text-6xl max-w-3xl mb-12">
-          Six backgrounds.<br />
+        <Reveal as="h2" className="display text-4xl md:text-6xl max-w-3xl mb-4">
+          Six founders.<br />
           <span className="text-foreground/40">One product.</span>
         </Reveal>
+        <Reveal delay={80} className="text-lg text-muted-foreground max-w-2xl mb-12">
+          Six students from different disciplines met inside an innovation challenge.
+          Five months later, the project became a startup — with a clear role for every background.
+        </Reveal>
         <Reveal delay={150}>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-border border border-border rounded-md overflow-hidden">
-            {["Product", "Design", "Engineering", "Research", "Business", "Sustainability"].map(
-              (role, i) => (
-                <div
-                  key={role}
-                  className="bg-background p-6 min-h-[160px] flex flex-col justify-between group transition-colors duration-500 hover:bg-foreground hover:text-background"
-                >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border rounded-md overflow-hidden">
+            {[
+              { name: "Mounir Samite", major: "Engineering & Computer Science", role: "CTO / Technical Lead" },
+              { name: "Vishakha Singh", major: "International Management", role: "CEO / Business Development" },
+              { name: "Yuan Zhao", major: "Digital Transformation Management", role: "COO / Digital Operations" },
+              { name: "Giorgio Musarella", major: "Law, Economics & Governance", role: "Legal & Strategy" },
+              { name: "Amir Fooladi Fard", major: "Pharmacy", role: "Product & Regulatory Affairs" },
+              { name: "Giada Raffaelli", major: "International Relations", role: "Communications & Partnerships" },
+            ].map((member, i) => (
+              <div
+                key={member.name}
+                className="bg-background p-7 md:p-8 min-h-[170px] flex flex-col justify-between group transition-colors duration-500 hover:bg-foreground hover:text-background"
+              >
+                <div className="flex items-start justify-between">
                   <div className="display text-sm text-ember tabular-nums">{String(i + 1).padStart(2, "0")}</div>
-                  <div className="display text-xl mt-auto">{role}</div>
+                  <div className="text-xs text-muted-foreground group-hover:text-background/50 transition-colors duration-500 max-w-[60%] text-right leading-tight">
+                    {member.major}
+                  </div>
                 </div>
-              ),
-            )}
+                <div className="mt-6">
+                  <div className="display text-xl">{member.name}</div>
+                  <div className="text-sm text-muted-foreground group-hover:text-background/60 transition-colors duration-500 mt-1">
+                    {member.role}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </Reveal>
       </Section>
