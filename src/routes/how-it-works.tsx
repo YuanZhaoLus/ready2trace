@@ -16,13 +16,13 @@ import {
 export const Route = createFileRoute("/how-it-works")({
   head: () => ({
     meta: [
-      { title: "How It Works — PackyTrace" },
+      { title: "PackyTrace — How It Works" },
       {
         name: "description",
         content:
           "Scan, understand, engage. PackyTrace turns the QR code on every food pack into a useful 15-second moment for shoppers and a measurable channel for brands.",
       },
-      { property: "og:title", content: "How It Works — PackyTrace" },
+      { property: "og:title", content: "PackyTrace — How It Works" },
       {
         property: "og:description",
         content:
