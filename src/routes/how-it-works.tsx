@@ -90,7 +90,7 @@ function HowItWorksPage() {
   return (
     <Layout>
       <PageHero
-        eyebrow="How it works"
+        eyebrow="PackyTrace"
         title={
           <>
             A useful 15-second<br />
