@@ -267,12 +267,14 @@ function AudienceCard({
   bullets,
   img,
   tone,
+  cta,
 }: {
   tag: string;
   title: string;
   bullets: string[];
   img?: string;
   tone: "cream" | "ink";
+  cta?: { to: string; label: string };
 }) {
   const isInk = tone === "ink";
   return (
@@ -302,7 +304,22 @@ function AudienceCard({
           </li>
         ))}
       </ul>
-      {img && (
+      {cta && (
+        <div className="mt-auto pt-6">
+          <Link
+            to={cta.to}
+            className={`inline-flex items-center gap-2 text-sm font-medium transition-colors duration-300 ${
+              isInk
+                ? "text-background hover:text-ember"
+                : "text-foreground hover:text-ember"
+            }`}
+          >
+            {cta.label}
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+        </div>
+      )}
+      {img && !cta && (
         <div className="mt-auto pt-8 -mx-8 md:-mx-12 -mb-8 md:-mb-12 overflow-hidden">
           <img
             src={img}
@@ -314,7 +331,7 @@ function AudienceCard({
           />
         </div>
       )}
-      {!img && (
+      {!img && !cta && (
         <div className="mt-auto pt-8 grid grid-cols-3 gap-3 text-xs">
           <MiniStat n="38%" l="repeat scans" />
           <MiniStat n="2.4×" l="time on pack" />
