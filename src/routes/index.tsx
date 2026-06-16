@@ -100,20 +100,20 @@ function Hero() {
             className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
             style={{ animation: "fadeUp 900ms 460ms ease-out both" }}
           >
-            PackyTrace transforms food packaging QR codes into useful digital
-            experiences for consumers — and actionable insights for the brands
-            behind them.
+            We build the digital layer behind food packaging. Our first product,
+            PackyTrace, turns every QR code into a useful experience for
+            consumers — and a measurable channel for brands.
           </p>
           <div
             className="flex flex-wrap gap-3 md:justify-end"
             style={{ animation: "fadeUp 900ms 600ms ease-out both" }}
           >
-            <Link to="/contact" className="btn-primary">
-              Partner With Us
+            <Link to="/how-it-works" className="btn-primary">
+              Meet PackyTrace
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
-            <Link to="/how-it-works" className="btn-ghost">
-              See How It Works
+            <Link to="/companies" className="btn-ghost">
+              For Companies
             </Link>
           </div>
         </div>
