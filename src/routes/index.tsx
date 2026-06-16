@@ -14,13 +14,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PackyTrace — The digital layer behind food packaging" },
+      { title: "Ready2Trace — PackyTrace" },
       {
         name: "description",
         content:
           "PackyTrace turns food packaging QR codes into useful digital experiences for consumers and actionable insights for brands. Built by Ready2Trace.",
       },
-      { property: "og:title", content: "PackyTrace — The digital layer behind food packaging" },
+      { property: "og:title", content: "Ready2Trace — PackyTrace" },
       {
         property: "og:description",
         content:
@@ -76,7 +76,7 @@ function Hero() {
           style={{ animation: "fadeUp 700ms ease-out both" }}
         >
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-ember" style={{ animation: "blink 1.6s ease-in-out infinite" }} />
-          Ready2Trace · PackyTrace
+          Ready2Trace
         </div>
         <h1 className="display text-[12vw] md:text-[8.5vw] lg:text-[7.5rem] text-foreground max-w-[14ch]">
           <span className="inline-block" style={{ animation: "fadeUp 900ms 120ms ease-out both" }}>
@@ -100,20 +100,20 @@ function Hero() {
             className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
             style={{ animation: "fadeUp 900ms 460ms ease-out both" }}
           >
-            PackyTrace transforms food packaging QR codes into useful digital
-            experiences for consumers — and actionable insights for the brands
-            behind them.
+            We build the digital layer behind food packaging. Our first product,
+            PackyTrace, turns every QR code into a useful experience for
+            consumers — and a measurable channel for brands.
           </p>
           <div
             className="flex flex-wrap gap-3 md:justify-end"
             style={{ animation: "fadeUp 900ms 600ms ease-out both" }}
           >
-            <Link to="/contact" className="btn-primary">
-              Partner With Us
+            <Link to="/how-it-works" className="btn-primary">
+              Meet PackyTrace
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
-            <Link to="/how-it-works" className="btn-ghost">
-              See How It Works
+            <Link to="/companies" className="btn-ghost">
+              For Companies
             </Link>
           </div>
         </div>
@@ -232,7 +232,7 @@ function SplitAudience() {
         <Reveal>
           <AudienceCard
             tone="cream"
-            tag="For Consumers"
+            tag="PackyTrace"
             title="Clear answers, on the things you already buy."
             bullets={[
               "Personalised allergens & nutrition",
@@ -241,6 +241,7 @@ function SplitAudience() {
               "Rewards from your favourite brands",
             ]}
             img={groceries}
+            cta={{ to: "/how-it-works", label: "See how PackyTrace works" }}
           />
         </Reveal>
         <Reveal delay={150}>
@@ -267,12 +268,14 @@ function AudienceCard({
   bullets,
   img,
   tone,
+  cta,
 }: {
   tag: string;
   title: string;
   bullets: string[];
   img?: string;
   tone: "cream" | "ink";
+  cta?: { to: string; label: string };
 }) {
   const isInk = tone === "ink";
   return (
@@ -302,7 +305,22 @@ function AudienceCard({
           </li>
         ))}
       </ul>
-      {img && (
+      {cta && (
+        <div className="mt-auto pt-6">
+          <Link
+            to={cta.to}
+            className={`inline-flex items-center gap-2 text-sm font-medium transition-colors duration-300 ${
+              isInk
+                ? "text-background hover:text-ember"
+                : "text-foreground hover:text-ember"
+            }`}
+          >
+            {cta.label}
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+        </div>
+      )}
+      {img && !cta && (
         <div className="mt-auto pt-8 -mx-8 md:-mx-12 -mb-8 md:-mb-12 overflow-hidden">
           <img
             src={img}
@@ -314,7 +332,7 @@ function AudienceCard({
           />
         </div>
       )}
-      {!img && (
+      {!img && !cta && (
         <div className="mt-auto pt-8 grid grid-cols-3 gap-3 text-xs">
           <MiniStat n="38%" l="repeat scans" />
           <MiniStat n="2.4×" l="time on pack" />

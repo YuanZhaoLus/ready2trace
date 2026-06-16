@@ -4,8 +4,7 @@ const cols = [
   {
     title: "Product",
     items: [
-      { label: "How It Works", to: "/" as const, hash: "how" },
-      { label: "Features", to: "/" as const, hash: "features" },
+      { label: "PackyTrace", to: "/how-it-works" as const },
       { label: "For Companies", to: "/companies" as const },
       { label: "Insights", to: "/insights" as const },
     ],
@@ -38,7 +37,6 @@ export function Footer() {
                 <li key={i.label}>
                   <Link
                     to={i.to}
-                    hash={"hash" in i ? i.hash : undefined}
                     className="text-muted-foreground hover:text-foreground transition-colors link-underline"
                   >
                     {i.label}
