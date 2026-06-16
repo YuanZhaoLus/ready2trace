@@ -232,7 +232,7 @@ function SplitAudience() {
         <Reveal>
           <AudienceCard
             tone="cream"
-            tag="For Consumers"
+            tag="PackyTrace"
             title="Clear answers, on the things you already buy."
             bullets={[
               "Personalised allergens & nutrition",
@@ -241,6 +241,7 @@ function SplitAudience() {
               "Rewards from your favourite brands",
             ]}
             img={groceries}
+            cta={{ to: "/how-it-works", label: "See how PackyTrace works" }}
           />
         </Reveal>
         <Reveal delay={150}>
