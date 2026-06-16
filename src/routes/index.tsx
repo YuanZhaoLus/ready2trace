@@ -14,13 +14,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PackyTrace — The digital layer behind food packaging" },
+      { title: "Ready2Trace — PackyTrace" },
       {
         name: "description",
         content:
           "PackyTrace turns food packaging QR codes into useful digital experiences for consumers and actionable insights for brands. Built by Ready2Trace.",
       },
-      { property: "og:title", content: "PackyTrace — The digital layer behind food packaging" },
+      { property: "og:title", content: "Ready2Trace — PackyTrace" },
       {
         property: "og:description",
         content:
