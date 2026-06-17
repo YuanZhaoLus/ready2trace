@@ -36,42 +36,66 @@ function CompaniesPage() {
   return (
     <Layout>
       <PageHero
-        eyebrow="For Companies"
+        eyebrow="For Companies · B2B"
         title={
           <>
-            We turn compliance<br />
-            pressure into{" "}
-            <span className="text-ember">product value.</span>
+            We started for shoppers.<br />
+            <span className="text-foreground/40">Then brands asked us back.</span>
           </>
         }
-        lede="For food brands, packaging companies, retailers and innovation teams ready to make the QR on their pack actually work."
+        lede="Ready2Trace began as a consumer product. The more brands saw PackyTrace working on real packs, the more one question came back: what about us?"
       />
 
-      <Section>
+      <Section eyebrow="The origin story">
+        <div className="grid md:grid-cols-[1fr_1.2fr] gap-12 items-start">
+          <Reveal as="h2" className="display text-4xl md:text-5xl">
+            One product became<br />
+            <span className="text-foreground/40">two-sided by design.</span>
+          </Reveal>
+          <Reveal delay={150} className="space-y-5 text-muted-foreground leading-relaxed">
+            <p>
+              We set out to fix a consumer problem — the QR codes that lead
+              nowhere. We built PackyTrace, ran it on real SKUs, watched real
+              shoppers use it.
+            </p>
+            <p>
+              Then the food brands behind those packs started asking the harder
+              question. They sell through retailers; they almost never meet the
+              buyer. Could the same scan give them, for the first time, a clean
+              line of sight to the people who actually bought their product?
+            </p>
+            <p className="text-foreground">
+              Yes — but only if privacy was architectural, not a footnote.
+              That's what the Brand Dashboard is.
+            </p>
+          </Reveal>
+        </div>
+      </Section>
+
+      <Section className="bg-foreground text-background" eyebrow="The offer">
         <div className="grid md:grid-cols-[1fr_1fr] gap-16 items-start">
           <Reveal>
-            <div className="bg-sand rounded-md p-8 md:p-10">
-              <div className="eyebrow text-ember mb-6">The offer</div>
-              <p className="text-xl leading-relaxed text-foreground">
-                A branded consumer experience plus the analytics layer behind it — deployed on the QR you already print.
-              </p>
-              <Link to="/contact" className="btn-primary mt-10">
-                Become a partner brand
-                <ArrowUpRight className="h-4 w-4" />
-              </Link>
-            </div>
+            <h2 className="display text-4xl md:text-6xl text-background">
+              A branded consumer<br />
+              experience —<br />
+              <span className="text-background/40">plus the layer behind it.</span>
+            </h2>
+            <p className="mt-8 text-background/70 max-w-md leading-relaxed">
+              Deployed on the QR you already print. Brands pay, consumers use it
+              for free.
+            </p>
+            <Link to="/dashboard" className="btn-primary mt-10">
+              See the dashboard <ArrowUpRight className="h-4 w-4" />
+            </Link>
           </Reveal>
           <Reveal delay={150}>
-            <ul className="divide-y divide-foreground/15 border-y border-foreground/15">
+            <ul className="divide-y divide-background/15 border-y border-background/15">
               {points.map((p, i) => (
-                <li
-                  key={p}
-                  className="flex items-start gap-6 py-5 group transition-colors duration-300 hover:text-ember"
-                >
+                <li key={p} className="flex items-start gap-6 py-5 group">
                   <span className="display text-sm text-ember mt-1 tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-lg text-foreground group-hover:text-ember transition-colors duration-300">
+                  <span className="text-lg text-background group-hover:text-ember transition-colors duration-300">
                     {p}
                   </span>
                 </li>
@@ -81,34 +105,38 @@ function CompaniesPage() {
         </div>
       </Section>
 
-      <Section eyebrow="What partners see" className="bg-foreground text-background">
-        <Reveal as="h2" className="display text-4xl md:text-6xl text-background max-w-3xl mb-16">
-          The numbers behind<br />a useful scan.
+      <Section eyebrow="What partners see">
+        <Reveal as="h2" className="display text-4xl md:text-6xl max-w-3xl mb-16">
+          The numbers behind<br />
+          <span className="text-foreground/40">a useful scan.</span>
         </Reveal>
-        <div className="grid md:grid-cols-4 gap-px bg-background/15 border border-background/15 rounded-md overflow-hidden">
+        <div className="grid md:grid-cols-4 gap-px bg-border border border-border rounded-md overflow-hidden">
           {kpis.map((k, i) => (
             <Reveal key={k.l} delay={i * 100}>
-              <div className="bg-foreground p-8 md:p-10 min-h-[200px] h-full flex flex-col justify-between">
-                <div className="display text-5xl md:text-6xl text-background">{k.k}</div>
-                <div className="text-background/50 text-xs uppercase tracking-widest">{k.l}</div>
+              <div className="bg-background p-8 md:p-10 min-h-[200px] h-full flex flex-col justify-between">
+                <div className="display text-5xl md:text-6xl text-foreground">{k.k}</div>
+                <div className="text-muted-foreground text-xs uppercase tracking-widest">{k.l}</div>
               </div>
             </Reveal>
           ))}
         </div>
-        <p className="mt-8 text-background/50 text-sm">
+        <p className="mt-8 text-muted-foreground text-sm">
           Illustrative ranges from early pilots and consumer research, 2024–2025.
         </p>
       </Section>
 
-      <Section eyebrow="Get started">
+      <Section eyebrow="Get started" className="bg-sand">
         <div className="grid md:grid-cols-[1.4fr_1fr] gap-12 items-end">
           <Reveal as="h2" className="display text-4xl md:text-6xl">
             Pilot a single SKU.
             <span className="text-foreground/40"> Scale across the range.</span>
           </Reveal>
-          <Reveal delay={150}>
+          <Reveal delay={150} className="flex flex-wrap gap-3">
             <Link to="/contact" className="btn-primary">
               Talk to the team <ArrowUpRight className="h-4 w-4" />
+            </Link>
+            <Link to="/dashboard" className="btn-ghost">
+              See the dashboard
             </Link>
           </Reveal>
         </div>

@@ -168,15 +168,15 @@ function HowItWorksPage() {
       <Section className="bg-sand">
         <div className="grid md:grid-cols-[1.4fr_1fr] gap-12 items-end">
           <Reveal as="h2" className="display text-4xl md:text-6xl">
-            Ready to put it on<br />
-            <span className="text-foreground/40">your pack?</span>
+            We built this for shoppers.<br />
+            <span className="text-foreground/40">Then brands asked: what about us?</span>
           </Reveal>
           <Reveal delay={150} className="flex flex-wrap gap-3">
             <Link to="/companies" className="btn-primary">
-              For Companies <ArrowUpRight className="h-4 w-4" />
+              The B2B story <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <Link to="/contact" className="btn-ghost">
-              Talk to the team
+            <Link to="/dashboard" className="btn-ghost">
+              See the dashboard
             </Link>
           </Reveal>
         </div>

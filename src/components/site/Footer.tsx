@@ -2,11 +2,17 @@ import { Link } from "@tanstack/react-router";
 
 const cols = [
   {
-    title: "Product",
+    title: "Consumer",
     items: [
-      { label: "PackyTrace", to: "/how-it-works" as const },
+      { label: "PackyTrace", to: "/packytrace" as const },
+      { label: "How It Works", to: "/how-it-works" as const },
+    ],
+  },
+  {
+    title: "Business",
+    items: [
       { label: "For Companies", to: "/companies" as const },
-      { label: "Insights", to: "/insights" as const },
+      { label: "Brand Dashboard", to: "/dashboard" as const },
     ],
   },
   {
@@ -21,7 +27,7 @@ const cols = [
 export function Footer() {
   return (
     <footer className="border-t border-border/60 bg-background">
-      <div className="container-x py-16 grid gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+      <div className="container-x py-16 grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
         <div>
           <div className="display text-2xl">READY2TRACE</div>
           <p className="mt-3 text-sm text-muted-foreground max-w-xs">
