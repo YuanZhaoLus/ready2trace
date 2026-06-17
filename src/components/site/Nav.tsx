@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 
 const links = [
   { to: "/", label: "Home", exact: true },
+  { to: "/packytrace", label: "PackyTrace" },
   { to: "/how-it-works", label: "How It Works" },
   { to: "/companies", label: "For Companies" },
+  { to: "/dashboard", label: "Dashboard" },
   { to: "/about", label: "About" },
-  { to: "/insights", label: "Insights" },
   { to: "/contact", label: "Contact" },
 ] as const;
 

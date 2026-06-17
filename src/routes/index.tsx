@@ -3,28 +3,29 @@ import { Layout } from "@/components/site/Layout";
 import { Section } from "@/components/site/Sections";
 import { Reveal } from "@/components/site/Reveal";
 import heroScan from "@/assets/hero-scan.jpg";
-import groceries from "@/assets/groceries.jpg";
 import {
   ArrowUpRight,
   Sparkles,
   ShieldCheck,
   Leaf,
+  ScanLine,
+  LineChart,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ready2Trace — PackyTrace" },
+      { title: "Ready2Trace — The digital layer behind food packaging" },
       {
         name: "description",
         content:
-          "PackyTrace turns food packaging QR codes into useful digital experiences for consumers and actionable insights for brands. Built by Ready2Trace.",
+          "Ready2Trace builds the digital layer behind food packaging. Two products on one architecture: PackyTrace for shoppers, a brand dashboard for the companies behind the shelf.",
       },
-      { property: "og:title", content: "Ready2Trace — PackyTrace" },
+      { property: "og:title", content: "Ready2Trace — The digital layer behind food packaging" },
       {
         property: "og:description",
         content:
-          "From shelf to habit in 15 seconds. Branded consumer experiences and pack-level insight for food & beverage brands.",
+          "Two products, one architecture. PackyTrace for shoppers, a brand dashboard for the companies behind the shelf.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -39,8 +40,8 @@ function Home() {
     <Layout>
       <Hero />
       <Marquee />
-      <Intro />
-      <SplitAudience />
+      <Problem />
+      <TwoPillars />
       <WhyUs />
       <ExploreMore />
     </Layout>
@@ -51,7 +52,6 @@ function Home() {
 function Hero() {
   return (
     <section className="relative pt-32 md:pt-40 pb-20 md:pb-28 overflow-hidden">
-      {/* Ambient gradient blobs — Apple-style atmosphere */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
         <div
           className="absolute -top-32 -left-24 h-[42rem] w-[42rem] rounded-full opacity-60 blur-3xl"
@@ -80,7 +80,7 @@ function Hero() {
         </div>
         <h1 className="display text-[12vw] md:text-[8.5vw] lg:text-[7.5rem] text-foreground max-w-[14ch]">
           <span className="inline-block" style={{ animation: "fadeUp 900ms 120ms ease-out both" }}>
-            From shelf to habit
+            The digital layer
           </span>
           <br />
           <span
@@ -92,7 +92,7 @@ function Hero() {
               backgroundSize: "200% 100%",
             }}
           >
-            in 15 seconds.
+            behind food packaging.
           </span>
         </h1>
         <div className="mt-12 grid md:grid-cols-[1.1fr_0.9fr] gap-10 items-end">
@@ -100,20 +100,20 @@ function Hero() {
             className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
             style={{ animation: "fadeUp 900ms 460ms ease-out both" }}
           >
-            We build the digital layer behind food packaging. Our first product,
-            PackyTrace, turns every QR code into a useful experience for
-            consumers — and a measurable channel for brands.
+            We're an Italian software company turning the QR code on every food
+            pack into something useful — for the shopper standing in front of
+            the shelf, and for the brand behind it.
           </p>
           <div
             className="flex flex-wrap gap-3 md:justify-end"
             style={{ animation: "fadeUp 900ms 600ms ease-out both" }}
           >
-            <Link to="/how-it-works" className="btn-primary">
+            <Link to="/packytrace" className="btn-primary">
               Meet PackyTrace
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <Link to="/companies" className="btn-ghost">
-              For Companies
+            <Link to="/dashboard" className="btn-ghost">
+              See the dashboard
             </Link>
           </div>
         </div>
@@ -123,7 +123,7 @@ function Hero() {
             <div className="relative aspect-[4/5] md:aspect-auto bg-sand rounded-md overflow-hidden group">
               <img
                 src={heroScan}
-                alt="A consumer scanning a QR code on an Italian food package with PackyTrace"
+                alt="A consumer scanning a QR code on an Italian food package"
                 width={1280}
                 height={1280}
                 className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.04]"
@@ -135,18 +135,18 @@ function Hero() {
                 className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-ember/20 blur-3xl"
                 style={{ animation: "floaty 6s ease-in-out infinite" }}
               />
-              <div className="eyebrow text-ember relative">A living product page</div>
+              <div className="eyebrow text-ember relative">Two products, one architecture</div>
               <div className="mt-12 relative">
                 <div className="display text-3xl md:text-5xl text-background leading-tight">
-                  One scan.<br />
-                  Five answers.<br />
-                  <span className="text-background/40">Zero friction.</span>
+                  PackyTrace for<br />
+                  shoppers. A dashboard<br />
+                  <span className="text-background/40">for the brand.</span>
                 </div>
                 <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 text-sm">
-                  <Stat k="Origin" v="Field to shelf" />
-                  <Stat k="Recycling" v="By postcode" />
-                  <Stat k="Allergens" v="Personalised" />
-                  <Stat k="Rewards" v="Loyalty built-in" />
+                  <Stat k="B2C" v="PackyTrace" />
+                  <Stat k="B2B" v="Brand dashboard" />
+                  <Stat k="Built in" v="Italy" />
+                  <Stat k="GDPR" v="By design" />
                 </div>
               </div>
             </div>
@@ -195,26 +195,27 @@ function Marquee() {
   );
 }
 
-/* ---------------- INTRO ---------------- */
-function Intro() {
+/* ---------------- PROBLEM ---------------- */
+function Problem() {
   return (
-    <Section eyebrow="The digital layer">
+    <Section eyebrow="The problem we picked">
       <div className="grid md:grid-cols-[1fr_1.3fr] gap-12 md:gap-20 items-start">
         <Reveal as="h2" className="display text-4xl md:text-6xl leading-[1.02]">
           The information<br />exists. The right<br />answer doesn't.
         </Reveal>
         <Reveal delay={150} className="space-y-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">
           <p>
-            Consumers face fragmented labels and untrusted sources. Brands ship
-            QR codes under regulatory pressure that lead nowhere useful.
+            Shoppers face fragmented labels and untrusted sources. Brands ship
+            mandatory QR codes that lead to dead landing pages — and stay
+            structurally distant from the people who buy their products.
           </p>
           <p>
-            PackyTrace turns those mandatory codes into a living service layer —
-            clear answers for shoppers, branded engagement for companies,
-            actionable insight across the supply chain.
+            Ready2Trace turns those mandatory codes into a living service layer.
+            One side speaks to the consumer. The other gives the brand back its
+            buyer, in a privacy-safe form.
           </p>
           <p className="text-foreground font-medium">
-            We help people understand what they buy, and help brands understand
+            We help people understand what they buy — and help brands understand
             the people who buy it.
           </p>
         </Reveal>
@@ -223,38 +224,39 @@ function Intro() {
   );
 }
 
-
-/* ---------------- SPLIT AUDIENCE ---------------- */
-function SplitAudience() {
+/* ---------------- TWO PILLARS ---------------- */
+function TwoPillars() {
   return (
-    <Section eyebrow="Who it's for">
+    <Section eyebrow="What we build">
       <div className="grid md:grid-cols-2 gap-4">
         <Reveal>
-          <AudienceCard
+          <PillarCard
             tone="cream"
-            tag="PackyTrace"
-            title="Clear answers, on the things you already buy."
+            tag="B2C · PackyTrace"
+            title="A useful 15-second moment on every pack."
             bullets={[
               "Personalised allergens & nutrition",
-              "Recipes based on your pantry",
-              "Recycle guidance by postcode",
-              "Rewards from your favourite brands",
+              "Recipes from your pantry",
+              "Recycling by postcode",
+              "Rewards from the brands you buy",
             ]}
-            img={groceries}
-            cta={{ to: "/how-it-works", label: "See how PackyTrace works" }}
+            icon={ScanLine}
+            cta={{ to: "/packytrace", label: "Meet PackyTrace" }}
           />
         </Reveal>
         <Reveal delay={150}>
-          <AudienceCard
+          <PillarCard
             tone="ink"
-            tag="For Companies"
-            title="A branded channel, with the data behind it."
+            tag="B2B · Brand Dashboard"
+            title="Pack-level insight from the people who actually bought."
             bullets={[
-              "On-pack digital experience",
-              "Pack-level interaction analytics",
-              "Retention & loyalty built-in",
-              "Fast setup, scalable architecture",
+              "Continuous, first-party behavioural data",
+              "Aggregated k ≥ 5, GDPR-safe by design",
+              "SKU-level scan, recycling and sentiment",
+              "Replaces fragmented €30k–150k+ research stacks",
             ]}
+            icon={LineChart}
+            cta={{ to: "/dashboard", label: "See the dashboard" }}
           />
         </Reveal>
       </div>
@@ -262,29 +264,32 @@ function SplitAudience() {
   );
 }
 
-function AudienceCard({
+function PillarCard({
   tag,
   title,
   bullets,
-  img,
   tone,
   cta,
+  icon: Icon,
 }: {
   tag: string;
   title: string;
   bullets: string[];
-  img?: string;
   tone: "cream" | "ink";
-  cta?: { to: string; label: string };
+  cta: { to: string; label: string };
+  icon: typeof ScanLine;
 }) {
   const isInk = tone === "ink";
   return (
     <div
-      className={`group relative rounded-md overflow-hidden p-8 md:p-12 min-h-[520px] h-full flex flex-col transition-all duration-700 hover:-translate-y-1 ${
+      className={`group relative rounded-md overflow-hidden p-8 md:p-12 min-h-[480px] h-full flex flex-col transition-all duration-700 hover:-translate-y-1 ${
         isInk ? "bg-foreground text-background" : "bg-sand text-foreground"
       }`}
     >
-      <div className="eyebrow text-ember">{tag}</div>
+      <div className="flex items-center justify-between">
+        <div className="eyebrow text-ember">{tag}</div>
+        <Icon className={`h-6 w-6 ${isInk ? "text-background/60" : "text-foreground/60"}`} />
+      </div>
       <h3
         className={`display text-3xl md:text-5xl mt-6 max-w-md ${
           isInk ? "text-background" : "text-foreground"
@@ -305,49 +310,17 @@ function AudienceCard({
           </li>
         ))}
       </ul>
-      {cta && (
-        <div className="mt-auto pt-6">
-          <Link
-            to={cta.to}
-            className={`inline-flex items-center gap-2 text-sm font-medium transition-colors duration-300 ${
-              isInk
-                ? "text-background hover:text-ember"
-                : "text-foreground hover:text-ember"
-            }`}
-          >
-            {cta.label}
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
-        </div>
-      )}
-      {img && !cta && (
-        <div className="mt-auto pt-8 -mx-8 md:-mx-12 -mb-8 md:-mb-12 overflow-hidden">
-          <img
-            src={img}
-            alt="Fresh groceries — the everyday products PackyTrace serves"
-            width={1280}
-            height={960}
-            loading="lazy"
-            className="w-full h-56 object-cover transition-transform duration-[1200ms] group-hover:scale-105"
-          />
-        </div>
-      )}
-      {!img && !cta && (
-        <div className="mt-auto pt-8 grid grid-cols-3 gap-3 text-xs">
-          <MiniStat n="38%" l="repeat scans" />
-          <MiniStat n="2.4×" l="time on pack" />
-          <MiniStat n="12s" l="median dwell" />
-        </div>
-      )}
-    </div>
-  );
-}
-
-function MiniStat({ n, l }: { n: string; l: string }) {
-  return (
-    <div className="border-t border-background/15 pt-3">
-      <div className="display text-2xl text-background">{n}</div>
-      <div className="text-background/50 uppercase tracking-widest text-[10px] mt-1">{l}</div>
+      <div className="mt-auto pt-10">
+        <Link
+          to={cta.to}
+          className={`inline-flex items-center gap-2 text-sm font-medium transition-colors duration-300 ${
+            isInk ? "text-background hover:text-ember" : "text-foreground hover:text-ember"
+          }`}
+        >
+          {cta.label}
+          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </Link>
+      </div>
     </div>
   );
 }
@@ -355,9 +328,9 @@ function MiniStat({ n, l }: { n: string; l: string }) {
 /* ---------------- WHY US ---------------- */
 function WhyUs() {
   const items = [
-    { i: ShieldCheck, t: "Regulation-aware by design", d: "Built on top of the QR codes that EU regulation already requires — we turn compliance pressure into product value." },
+    { i: ShieldCheck, t: "Regulation-aware by design", d: "Built on top of the QR codes EU regulation already requires — turning compliance pressure into product value." },
     { i: Sparkles, t: "Designed for real adoption", d: "Consumer-first interfaces grounded in interviews and research. Not another dead compliance page." },
-    { i: Leaf, t: "A bridge, not a silo", d: "We connect packaging, people and data — the missing link between brand intent and shelf behaviour." },
+    { i: Leaf, t: "A bridge, not a silo", d: "One architecture serving both sides of the shelf — shoppers and brands, on the same scan." },
   ];
   return (
     <Section eyebrow="Why Ready2Trace">
@@ -383,15 +356,16 @@ function WhyUs() {
 /* ---------------- EXPLORE MORE ---------------- */
 function ExploreMore() {
   const links = [
+    { to: "/packytrace", t: "PackyTrace", d: "The consumer product, in one page." },
     { to: "/how-it-works", t: "How It Works", d: "The 15-second flow and full feature system." },
-    { to: "/companies", t: "For Companies", d: "Branded channel, behavioural insight, retention." },
+    { to: "/companies", t: "For Companies", d: "The B2B side and how it came to be." },
+    { to: "/dashboard", t: "Brand Dashboard", d: "Pack-level insight, GDPR-safe by design." },
     { to: "/about", t: "About", d: "Six students. One question. A startup in the making." },
-    { to: "/insights", t: "Insights", d: "Field notes from food, packaging and product." },
     { to: "/contact", t: "Contact", d: "Build the next layer of food packaging with us." },
   ] as const;
   return (
     <Section eyebrow="Keep exploring">
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border border border-border rounded-md overflow-hidden">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border border-border rounded-md overflow-hidden">
         {links.map((l, i) => (
           <Reveal key={l.to} delay={i * 80}>
             <Link
