@@ -23,7 +23,7 @@ export function Footer() {
     <footer className="border-t border-border/60 bg-background">
       <div className="container-x py-16 grid gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div>
-          <div className="display text-2xl">PackyTrace</div>
+          <div className="display text-2xl">READY2TRACE</div>
           <p className="mt-3 text-sm text-muted-foreground max-w-xs">
             The digital layer behind food packaging. Built by Ready2Trace, an
             Italian software company.

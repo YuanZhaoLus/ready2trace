@@ -39,10 +39,10 @@ export function Nav() {
       <div className="container-x flex h-16 md:h-20 items-center justify-between gap-6">
         <Link to="/" className="flex items-center gap-2 group" onClick={() => setOpen(false)}>
           <span className="display text-xl md:text-2xl text-foreground transition-transform duration-300 group-hover:-translate-y-px">
-            PackyTrace
+            READY2TRACE
           </span>
           <span className="hidden sm:inline text-[11px] tracking-widest text-muted-foreground uppercase mt-1">
-            by Ready2Trace
+            {"\n"}
           </span>
         </Link>
 
