@@ -64,7 +64,7 @@ function PackyTracePage() {
           <Reveal delay={150}>
             <div className="bg-foreground text-background rounded-md p-8 md:p-12 h-full flex flex-col">
               <div className="eyebrow text-ember">Why it exists</div>
-              <p className=\"mt-8 text-xl md:text-2xl leading-relaxed text-background whitespace-pre-line\">
+              <p className="mt-8 text-xl md:text-2xl leading-relaxed text-background whitespace-pre-line">
                 - Most QR codes on food packs lead nowhere useful. PackyTrace turns
                 that mandatory square into a fifteen-second answer — about what's
                 in the pack, where it came from, and what to do with it next.{"\n\n\n"}
