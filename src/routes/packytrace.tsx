@@ -64,10 +64,11 @@ function PackyTracePage() {
           <Reveal delay={150}>
             <div className="bg-foreground text-background rounded-md p-8 md:p-12 h-full flex flex-col">
               <div className="eyebrow text-ember">Why it exists</div>
-              <p className="mt-8 text-xl md:text-2xl leading-relaxed text-background">
-                Most QR codes on food packs lead nowhere useful. PackyTrace turns
+              <p className="mt-8 text-xl md:text-2xl leading-relaxed text-background whitespace-pre-line">
+                - Most QR codes on food packs lead nowhere useful. PackyTrace turns
                 that mandatory square into a fifteen-second answer — about what's
-                in the pack, where it came from, and what to do with it next.
+                in the pack, where it came from, and what to do with it next.{"\n\n\n"}
+                - DPP (Digital Product Passport) starts to reveal in our daily lifes and has been implemented into heterogeneous fields step by step according to the regulation. It is crutial to prepare for food and beverage Ecosystem.
               </p>
               <div className="mt-auto pt-10">
                 <Link to="/how-it-works" className="inline-flex items-center gap-2 text-background hover:text-ember transition-colors">
