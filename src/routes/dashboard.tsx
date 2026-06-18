@@ -265,8 +265,8 @@ function DashboardPage() {
       {/* GDPR by design */}
       <Section eyebrow="GDPR by design">
         <Reveal as="h2" className="display text-4xl md:text-6xl max-w-3xl mb-16">
-          Three tiers of data.
-          <span className="text-foreground/40"> One safe seam.</span>
+          Three tiers of data.<br />
+          <span className="text-foreground/40">One safe seam.</span>
         </Reveal>
         <div className="grid md:grid-cols-3 gap-4">
           {[
