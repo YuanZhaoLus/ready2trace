@@ -177,6 +177,7 @@ function Marquee() {
     "Consumer Insight",
     "GDPR-aware",
     "EU Regulation-ready",
+    "DPP (Digital Product Passport) starts to reveal in our daily lifes and has been implemented into heterogeneous fields step by step according to the regulation",
   ];
   return (
     <div className="border-y border-border/60 py-6 overflow-hidden bg-background">
