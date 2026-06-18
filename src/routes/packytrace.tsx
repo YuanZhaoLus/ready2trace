@@ -19,7 +19,7 @@ export const Route = createFileRoute("/packytrace")({
       {
         property: "og:description",
         content:
-          "Clear answers on the things you already buy. No app install, no friction.",
+          "Clear answers on the groceries you already buy. No app install, no friction.",
       },
       { property: "og:url", content: "/packytrace" },
     ],
@@ -44,7 +44,7 @@ function PackyTracePage() {
         title={
           <>
             Clear answers, on<br />
-            <span className="text-foreground/40">the things you buy.</span>
+            <span className="text-foreground/40">the groceries you buy.</span>
           </>
         }
         lede="PackyTrace is Ready2Trace's first product — built for the shopper standing in front of the shelf, not the regulator behind a desk."
