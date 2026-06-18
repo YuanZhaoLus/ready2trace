@@ -84,7 +84,7 @@ function PackyTracePage() {
       <Section eyebrow="What you get">
         <Reveal as="h2" className="display text-4xl md:text-6xl max-w-3xl mb-16">
           Five things, one scan.
-          <span className="text-foreground/40"> No app to install.</span>
+          <span className="text-foreground/40">{"\n"}No app to install necessarily.</span>
         </Reveal>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {value.map((v, i) => (
