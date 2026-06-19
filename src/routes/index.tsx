@@ -78,7 +78,7 @@ function Hero() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-ember" style={{ animation: "blink 1.6s ease-in-out infinite" }} />
           Ready2Trace
         </div>
-        <h1 className="display text-[12vw] md:text-[8.5vw] lg:text-[7.5rem] text-foreground max-w-[14ch]">
+        <h1 className="display text-[12vw] md:text-[8.5vw] lg:text-[7.5rem] text-foreground">
           <span className="inline-block" style={{ animation: "fadeUp 900ms 120ms ease-out both" }}>
             The digital layer
           </span>
